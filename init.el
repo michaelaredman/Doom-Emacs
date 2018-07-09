@@ -21,8 +21,8 @@
        (helm             ; the *other* search engine for love and life
         +fuzzy)          ; enable fuzzy search backend for helm
       ;ido               ; the other *other* search engine...
-       (ivy              ; a search engine for love and life
-        +fuzzy)          ; enable fuzzy search backend for ivy
+      ;(ivy              ; a search engine for love and life
+      ; +fuzzy)          ; enable fuzzy search backend for ivy
 
        :ui
        doom              ; what makes DOOM look the way it does
@@ -35,9 +35,10 @@
        nav-flash         ; blink the current line after jumping
        neotree           ; a project drawer, like NERDTree for vim
       ;treemacs          ; a project drawer, like neotree but cooler
-       (popup            ; tame sudden yet inevitable temporary windows
-        +all             ; catch all popups that start with an asterix
-        +defaults)       ; default popup rules
+      (popup +defaults)
+      ;(popup            ; tame sudden yet inevitable temporary windows
+        ;+all             ; catch all popups that start with an asterix
+      ;  +defaults)       ; default popup rules
        pretty-code       ; replace bits of code with pretty symbols
       ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
        unicode           ; extended unicode support for various languages
