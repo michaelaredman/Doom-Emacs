@@ -8,12 +8,16 @@
                                                            (interactive)
                                                            (insert "#"))
 
+ :desc "Dired jump"                 :nv                  #'dired-jump
+
  :desc "Forward char"               :i "M-l"             #'evil-forward-char
 
  (:leader
 
    :desc "M-x"                      :nv "SPC"            #'helm-M-x
    :desc "Previous buffer"          :nv "<tab>"          #'previous-buffer
+
+   :desc "Avy Jump"                 :nv "j"              #'avy-goto-char-timer
 
    (:prefix "f"
      :desc "Find file"              :n "f"               #'helm-find-files)
@@ -55,6 +59,8 @@
         helm-autoresize-max-height 0)
   (helm-autoresize-mode t))
 
+(add-hook! 'prog-mode-hook 'rainbow-delimiters-mode-enable)
+
 ; hide the minibuffer when in helm - not sure if this is needed?
 (defun helm-hide-minibuffer-maybe ()
   (when (with-helm-buffer helm-echo-input-in-header-line)
@@ -77,6 +83,8 @@
 
 (setq doom-theme 'doom-molokai
       doom-font (font-spec :family "Menlo" :size 14))
+
+(setq ns-function-modifier 'hyper)
 
 (defun mike/org-bullet-faces ()
   "set org-level styles"
