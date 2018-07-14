@@ -8,7 +8,7 @@
                                                            (interactive)
                                                            (insert "#"))
 
- :desc "Dired jump"                 :nv                  #'dired-jump
+ :desc "Dired jump"                 :nv "-"              #'dired-jump
 
  :desc "Forward char"               :i "M-l"             #'evil-forward-char
 
@@ -48,6 +48,13 @@
 ; set mac alt key to meta
 (setq mac-option-modifier 'meta)
 
+; common lisp for emacs
+(require 'cl-lib)
+
+;; (setq helm-dash-browser-func 'browse-url-generic)
+;; (setq browse-url-browser-function 'browse-url-generic
+;;       browse-url-generic-program "open")
+
 ; type the search term at top of minibuffer and split window in place
 (after! helm
   (setq helm-default-display-buffer-functions nil)
@@ -82,7 +89,7 @@
    "rg"  "rg --color=always $*"))
 
 (setq doom-theme 'doom-molokai
-      doom-font (font-spec :family "Menlo" :size 14))
+      doom-font (font-spec :family "Menlo" :size 16))
 
 (setq ns-function-modifier 'hyper)
 
