@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: bibliography
+# key: bib
+# --
+\usepackage[
+maxcitenames=2,
+natbib=true,
+backend=biber,
+maxbibnames=6,
+sorting=none,
+url=false,
+doi=false
+]{biblatex}
+\addbibresource{$1.bib}
+\bibliography{$1}$0
