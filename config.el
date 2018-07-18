@@ -6,6 +6,7 @@
 (load "+search")
 (load "+org")
 
+
 ;; keymaps
 (map!
 
@@ -18,6 +19,12 @@
  :desc "Dired jump"                 :nv "-"              #'dired-jump
 
  :desc "Forward char"               :i "M-l"             #'evil-forward-char
+
+ :desc "Kill ring"                  :inv "M-i"           #'helm-show-kill-ring
+
+ :desc "Swoop all buffers"          :n "/"               #'helm-multi-swoop-all
+
+ :desc "Help!"                      "M-h"                #'help-for-help
 
  (:leader
 
@@ -36,8 +43,16 @@
    (:desc "Lisp" :prefix "e"
      :desc "Eval region"            :nv "r"              #'eval-region)
 
+   (:desc "General" :prefix "k"
+     :desc "Calc"                   :nv "c"              #'helm-calcul-expression)
+
+   (:prefix "/"
+     :desc "Swoop multi"            :nv "/"              #'helm-multi-swoop
+     :desc "Man page"               :nv "m"              #'helm-man-woman
+     :desc "Helm top"               :nv "t"              #'helm-top)
+
    (:prefix "b"
-     :desc "Switch buffer"          :nv "b"              #'switch-to-buffer
+     :desc "Switch buffer"          :nv "b"              #'helm-mini
      :desc "Kill buffer"            :n "d"               #'kill-current-buffer
      :desc "Kill buffer and window" :n "k"               #'kill-buffer-and-window))
 

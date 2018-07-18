@@ -9,6 +9,7 @@
   (setq helm-split-window-inside-p t
         helm-echo-input-in-header-line t
         helm-display-header-line t
+        helm-ff-search-library-in-sexp t
         helm-autoresize-min-height 30
         helm-autoresize-max-height 0)
   (helm-autoresize-mode t)
