@@ -44,7 +44,10 @@
      :desc "Eval region"            :nv "r"              #'eval-region)
 
    (:desc "General" :prefix "k"
-     :desc "Calc"                   :nv "c"              #'helm-calcul-expression)
+     :desc "Calc"                   :nv "c"              #'helm-calcul-expression
+     (:desc "Whitespace" :prefix "w"
+       :desc "Whitespace report"    :nv "r"              #'whitespace-report
+       :desc "Whitespace cleanup"   :nv "c"              #'whitespace-cleanup))
 
    (:prefix "/"
      :desc "Swoop multi"            :nv "/"              #'helm-multi-swoop
@@ -75,6 +78,8 @@
 
 ;; use rainbow delimiters in all programming modes
 (add-hook! 'prog-mode-hook 'rainbow-delimiters-mode-enable)
+
+(setq text-scale-mode-step 1.05)
 
 ;; shell config
 (after! eshell
