@@ -57,7 +57,10 @@
    (:prefix "b"
      :desc "Switch buffer"          :nv "b"              #'helm-mini
      :desc "Kill buffer"            :n "d"               #'kill-current-buffer
-     :desc "Kill buffer and window" :n "k"               #'kill-buffer-and-window))
+     :desc "Kill buffer and window" :n "k"               #'kill-buffer-and-window
+     :desc "Messages buffer"        :nv "m"              (lambda ()
+                                                           (interactive)
+                                                           (switch-to-buffer "*Messages*"))))
 
  (:after helm
    (:map helm-map
@@ -98,3 +101,4 @@
 ;; add user snippets folder
 (setq yas-snippet-dirs '(+snippets-dir emacs-snippets-dir +file-templates-dir "/Users/Mike/.doom.d/snippets/"))
 
+(setq dired-listing-switches "-lha")

@@ -21,3 +21,19 @@
   (add-hook 'org-mode-hook
             (lambda ()
               (push '("->" . "→") prettify-symbols-alist))))
+
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (progn
+              (message "hook has loaded")
+              (setq prettify-symbols-alist (append prettify-symbols-alist
+                                                   '(("->". "→")))))))
+
+
+(setq prettify-symbols-alist (append prettify-symbols-alist
+                                     '(("->". "→"))))
+
+(setq trees '(("first" . "maple") ("second" . "birch")))
+(setq trees (append trees '(("third" . "oak") ("fourth" . "yew"))))
+
