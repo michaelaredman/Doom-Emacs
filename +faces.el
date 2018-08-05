@@ -29,9 +29,19 @@
                                        '(("->". "→")))))
 (defun mike/pretty/elisp-mode ()
   (setq prettify-symbols-alist (append prettify-symbols-alist
-                                       '("lambdas" . "→"))))
+                                       '(("WARNING" . "⊘")))))
+
+;; (set-face-attribute 'rainbow-delimiters-depth-4-face nil :foreground "#8b3a62")
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil
+                                    '(("\\<\\(BUG\\)" 1 font-lock-warning-face prepend)))))
+;; BUG: This is an example of the font lock change
+
 
 (add-hook! 'org-mode-hook 'mike/pretty/org-mode)
+(add-hook! 'emacs-lisp-mode-hook 'mike/pretty/elisp-mode)
 
 ;; (set-face-attribute 'font-latex-math-face nil
 ;;                     :family "Menlo"
