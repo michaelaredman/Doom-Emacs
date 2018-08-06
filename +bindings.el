@@ -11,6 +11,8 @@
                                                            (interactive)
                                                            (insert "#"))
 
+ :desc
+
  :desc "Dired jump"                 :nv "-"              #'dired-jump
 
  :desc "Forward char"               :i "M-l"             #'evil-forward-char
@@ -18,8 +20,6 @@
  :desc "Kill ring"                  :inv "M-i"           #'helm-show-kill-ring
 
  :desc "Swoop all buffers"          :n "/"               #'helm-multi-swoop-all
-
- :desc "Help!"                      "M-h"                #'help-for-help
 
  (:leader
 
@@ -66,7 +66,13 @@
             :e "ESC"                                     #'helm-keyboard-quit)
           (:map helm-find-files-map
             "C-h"                                        #'helm-find-files-up-one-level
-            "C-l"                                        #'helm-execute-persistent-action))))
+            "C-l"                                        #'helm-execute-persistent-action))
+   (:after helm-buffers
+     (:map helm-buffer-map
+       "<return>"                                        #'helm-maybe-exit-minibuffer)))
+
+ :desc "Help!"                      "H-m-h"              #'help-for-help
+ :desc "Help!"                      "M-h"                #'help-for-help)
 
 ;; BUG (emacs): eshell-mode-map is nil outside of eshell-mode so keys must be bound outside map!
 (add-hook 'eshell-mode-hook

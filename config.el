@@ -36,3 +36,5 @@
 (setq yas-snippet-dirs '(+snippets-dir emacs-snippets-dir +file-templates-dir "/Users/Mike/.doom.d/snippets/"))
 
 (setq dired-listing-switches "-lha")
+
+(setq +doom-modeline-height 35)
